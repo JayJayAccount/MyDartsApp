@@ -50,6 +50,9 @@ border-radius: 4px;
 <span class="font-bold text-sm tracking-wide text-slate-100" id="header-title">My Darts App</span>
 </div>
 <div class="flex items-center space-x-1">
+<button id="btn-install" onclick="playAudio('click'); installApp()" class="hidden p-1.5 text-emerald-400 hover:text-emerald-300 rounded active:bg-slate-800 text-sm" title="Install app">
+<i class="fa-solid fa-download"></i>
+</button>
 <button id="btn-nav-menu" onclick="playAudio('click'); confirmHomeExit()" class="p-1.5 text-slate-300 hover:text-white rounded active:bg-slate-800 text-sm">
 <i class="fa-solid fa-house"></i>
 </button>
@@ -1618,9 +1621,32 @@ renderPlayerPickers();
     e.preventDefault();
     // Stash the event for later use
     deferredPrompt = e;
-    // Update UI to show install button if desired
+    // Show install button
+    document.getElementById('btn-install').classList.remove('hidden');
     console.log('App can be installed');
   });
+
+  // Hide install button when app is installed
+  window.addEventListener('appinstalled', () => {
+    document.getElementById('btn-install').classList.add('hidden');
+    deferredPrompt = null;
+    console.log('App was installed successfully');
+  });
+
+  // Handle installation
+  async function installApp() {
+    if (!deferredPrompt) {
+      console.log('Installation not available');
+      return;
+    }
+    // Show the install prompt
+    deferredPrompt.prompt();
+    // Wait for the user response
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(`User response to install prompt: ${outcome}`);
+    // Clear the deferredPrompt
+    deferredPrompt = null;
+  }
 </script>
 
 </body>
