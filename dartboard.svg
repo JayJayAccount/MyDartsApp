@@ -1,0 +1,57 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle (cream/tan) -->
+  <circle cx="100" cy="100" r="100" fill="#F5DEB3"/>
+  
+  <!-- Black outer ring -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#1a1a1a" stroke-width="8"/>
+  
+  <!-- Cream inner ring -->
+  <circle cx="100" cy="100" r="87" fill="#F5DEB3"/>
+  
+  <!-- Black double ring outer -->
+  <circle cx="100" cy="100" r="87" fill="none" stroke="#1a1a1a" stroke-width="4"/>
+  <circle cx="100" cy="100" r="83" fill="none" stroke="#1a1a1a" stroke-width="4"/>
+  
+  <!-- Cream middle section -->
+  <circle cx="100" cy="100" r="79" fill="#F5DEB3"/>
+  
+  <!-- Red outer numbers ring -->
+  <circle cx="100" cy="100" r="79" fill="none" stroke="#DC143C" stroke-width="5"/>
+  <circle cx="100" cy="100" r="74" fill="none" stroke="#DC143C" stroke-width="5"/>
+  
+  <!-- Cream section -->
+  <circle cx="100" cy="100" r="69" fill="#F5DEB3"/>
+  
+  <!-- Black triple ring outer -->
+  <circle cx="100" cy="100" r="69" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+  <circle cx="100" cy="100" r="65" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+  
+  <!-- Cream large middle section -->
+  <circle cx="100" cy="100" r="61" fill="#F5DEB3"/>
+  
+  <!-- Black inner double ring -->
+  <circle cx="100" cy="100" r="39" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+  <circle cx="100" cy="100" r="35" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+  
+  <!-- Inner bullseye - red outer -->
+  <circle cx="100" cy="100" r="31" fill="#DC143C"/>
+  
+  <!-- Inner bullseye - yellow center -->
+  <circle cx="100" cy="100" r="15" fill="#FFD700"/>
+  
+  <!-- Center dot -->
+  <circle cx="100" cy="100" r="3" fill="#000000"/>
+  
+  <!-- Decorative segments in main scoring area -->
+  <!-- Red and black alternating segments for visual depth -->
+  <g opacity="0.15">
+    <path d="M 100 100 L 100 50 A 50 50 0 0 1 128.87 62.5 Z" fill="#1a1a1a"/>
+    <path d="M 100 100 L 128.87 62.5 A 50 50 0 0 1 150 100 Z" fill="#DC143C"/>
+    <path d="M 100 100 L 150 100 A 50 50 0 0 1 128.87 137.5 Z" fill="#1a1a1a"/>
+    <path d="M 100 100 L 128.87 137.5 A 50 50 0 0 1 100 150 Z" fill="#DC143C"/>
+    <path d="M 100 100 L 100 150 A 50 50 0 0 1 71.13 137.5 Z" fill="#1a1a1a"/>
+    <path d="M 100 100 L 71.13 137.5 A 50 50 0 0 1 50 100 Z" fill="#DC143C"/>
+    <path d="M 100 100 L 50 100 A 50 50 0 0 1 71.13 62.5 Z" fill="#1a1a1a"/>
+    <path d="M 100 100 L 71.13 62.5 A 50 50 0 0 1 100 50 Z" fill="#DC143C"/>
+  </g>
+</svg>

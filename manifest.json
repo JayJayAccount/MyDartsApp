@@ -1,0 +1,36 @@
+{
+  "name": "My Darts App - Android Scoring App",
+  "short_name": "Darts",
+  "description": "A mobile-optimized darts scoring application for Android and Samsung phones",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#1e293b",
+  "background_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/dartboard.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "sports"],
+  "shortcuts": [
+    {
+      "name": "New Game",
+      "short_name": "New Game",
+      "description": "Start a new darts game",
+      "url": "/?action=new-game",
+      "icons": [
+        {
+          "src": "/dartboard.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}
