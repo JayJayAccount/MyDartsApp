@@ -5,6 +5,8 @@ const urlsToCache = [
   '/index.html',
   '/manifest.json',
   '/dartboard.svg',
+  '/dartboard-192.png',
+  '/dartboard-512.png',
   'https://cdn.tailwindcss.com',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
 ];

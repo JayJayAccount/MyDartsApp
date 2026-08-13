@@ -1616,36 +1616,54 @@ renderPlayerPickers();
 
   // Handle installation prompt
   let deferredPrompt;
+  let isInstallPromptReady = false;
+  
   window.addEventListener('beforeinstallprompt', e => {
     // Prevent the mini-infobar from appearing
     e.preventDefault();
     // Stash the event for later use
     deferredPrompt = e;
+    isInstallPromptReady = true;
     // Show install button
     document.getElementById('btn-install').classList.remove('hidden');
-    console.log('App can be installed');
+    console.log('PWA installation is available');
   });
 
   // Hide install button when app is installed
   window.addEventListener('appinstalled', () => {
+    console.log('PWA was installed successfully');
     document.getElementById('btn-install').classList.add('hidden');
     deferredPrompt = null;
-    console.log('App was installed successfully');
+    isInstallPromptReady = false;
   });
+
+  // Check if running in standalone mode (already installed)
+  if (window.navigator.standalone === true) {
+    console.log('App is running in standalone mode (installed)');
+    document.getElementById('btn-install').classList.add('hidden');
+  }
 
   // Handle installation
   async function installApp() {
-    if (!deferredPrompt) {
-      console.log('Installation not available');
+    if (!deferredPrompt || !isInstallPromptReady) {
+      console.log('Installation not available at this time');
+      alert('This app cannot be installed on your device. Ensure you are using Chrome/Edge on Android.');
       return;
     }
-    // Show the install prompt
-    deferredPrompt.prompt();
-    // Wait for the user response
-    const { outcome } = await deferredPrompt.userChoice;
-    console.log(`User response to install prompt: ${outcome}`);
-    // Clear the deferredPrompt
-    deferredPrompt = null;
+    try {
+      // Show the install prompt
+      deferredPrompt.prompt();
+      // Wait for the user response
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log(`User response to install prompt: ${outcome}`);
+      // Clear the deferredPrompt
+      if (outcome === 'accepted') {
+        deferredPrompt = null;
+        isInstallPromptReady = false;
+      }
+    } catch (error) {
+      console.error('Installation error:', error);
+    }
   }
 </script>
 
